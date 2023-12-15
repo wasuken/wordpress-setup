@@ -1,0 +1,5 @@
+[wordpress_servers]
+
+
+[test_servers]
+localhost ansible_host= ansible_port= ansible_user= ansible_ssh_pass= ansible_python_interpreter=
