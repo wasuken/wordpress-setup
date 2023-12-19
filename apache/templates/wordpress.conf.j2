@@ -1,13 +1,13 @@
 <VirtualHost *:80>
-    ServerAdmin webmaster@localhost
+    ServerAdmin {{ server_admin}}
     DocumentRoot /var/www/html/wordpress
-    ServerName {{ wordpress_server_name }}
-    ServerAlias www.{{ wordpress_server_name }}
+    ServerName {{ server_name }}
+    ServerAlias www.{{ server_name }}
 
     <Directory /var/www/html/wordpress>
-        Options FollowSymLinks
-        AllowOverride All
-        Require all granted
+	Options FollowSymLinks
+	AllowOverride All
+	Require all granted
     </Directory>
 
     ErrorLog ${APACHE_LOG_DIR}/error.log

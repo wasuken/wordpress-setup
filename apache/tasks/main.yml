@@ -1,0 +1,34 @@
+---
+# Apacheをインストールする
+- name: Install Apache
+  apt:
+    name: apache2
+    state: present
+
+# mod_rewriteモジュールを有効にする
+- name: Enable mod_rewrite module
+  apache2_module:
+    name: rewrite
+    state: present
+
+# Apacheのバーチャルホストを設定する
+- name: Set up Apache virtual host for WordPress
+  template:
+    src: wordpress.conf.j2
+    dest: /etc/apache2/sites-available/wordpress.conf
+
+# 設定されたバーチャルホストを有効にする
+- name: Enable WordPress site
+  command: a2ensite wordpress.conf
+  notify:
+    - restart apache
+
+# デフォルトのバーチャルホストを無効にする
+- name: Disable default virtual host
+  command: a2dissite 000-default.conf
+
+# Apacheサービスを再起動する
+- name: Restart Apache
+  service:
+    name: apache2
+    state: restarted

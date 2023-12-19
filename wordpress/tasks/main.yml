@@ -1,0 +1,35 @@
+---
+- name: Create Document Root
+  file:
+    path: /var/www/html
+    state: directory
+    recurse: yes
+    owner: www-data
+    group: www-data
+    mode: "0755"
+
+- name: Check if WordPress archive already exists
+  stat:
+    path: /tmp/latest.tar.gz
+  register: wp_archive
+
+- name: Download WordPress archive
+  get_url:
+    url: https://wordpress.org/latest.tar.gz
+    dest: /tmp/latest.tar.gz
+  when: not wp_archive.stat.exists
+
+- name: Extract WordPress
+  unarchive:
+    src: /tmp/latest.tar.gz
+    dest: "/var/www/html"
+    remote_src: yes
+    creates: "/var/www/html/wordpress"
+
+- name: Copy WordPress config file
+  template:
+    src: wp-config.php.j2
+    dest: /var/www/html/wordpress/wp-config.php
+    owner: www-data
+    group: www-data
+    mode: "0644"

@@ -1,0 +1,17 @@
+# WordPressのデータベース設定
+wordpress_db_name: wordpress
+wordpress_db_user: wpuser
+wordpress_db_password: R2ezqlM4Qd4PhjW
+
+# WordPressのサーバー設定
+wordpress_server_name: fox.archmint.local
+
+# WordPressセキュリティキー（これらは例です。実際には独自の値を生成してください）
+wordpress_auth_key: "&D1&M9Up.MgUZYF|>4@#.?j2Z6++qm4^n3]*-(IklX#iwsF>XQCD}{v!{IHh`([;"
+wordpress_secure_auth_key: "xeAYH4$Z#=bfw,$_RYfWSurC-,M%!|Py<> %yG1&cI-yC?`KB}R)r~dRS@jd4Inj"
+wordpress_logged_in_key: "~L1ZD+*@v?aS?s_toZ~lNg-_h>ZB[wRCn~Wmr.-G|}yO[KsJwun7W-B[))Swy4x^"
+wordpress_nonce_key: "L85PP:1m7r|/=Z@!+Ci?h|.6_9s_:}@,LgRWB_]1/2JdCyeU`g;tocK:o3t./noK"
+wordpress_auth_salt: "7F;s^_U:Ku`.TBI-k7C3tu;x-KmSFd>/J+1Wc?UvE1W<]>:H{8lu`9b*$r|a0H%K"
+wordpress_secure_auth_salt: "-I#fWVZ][vXM|@Q{7P+#h $+8r8t%#B/+.qecdHjTw-%d0t;8fUMy_v@cGyRaX+o"
+wordpress_logged_in_salt: "`^v5IN?9a&e5xm8UI[&74FApuHvz&G0](yj.U~Nj vbR&i-5ps*|Q+z+sd8FG|7N"
+wordpress_nonce_salt: "yU*QL4&M$|iQgv,Lc`Pm|dI:`Wo?4`L0bLpv-Vc/Gfp}]Tv+49aC[<=_x/xvokKU"
